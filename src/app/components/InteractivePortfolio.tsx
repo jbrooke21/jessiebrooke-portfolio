@@ -6,7 +6,7 @@ import Lottie from "lottie-react";
 
 import heroAnimation from "../../assets/jessie-avatar.json";
 import Footer from "./Footer";
-import Container from "./Container";
+import Container from "./container";
 import iconCompass from "../../assets/compass.svg";
 import iconStatuspage from "../../assets/statuspage-icon.svg";
 import iconHalp from "../../assets/halp-icon.svg";
