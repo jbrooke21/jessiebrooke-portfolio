@@ -12,7 +12,7 @@ import iconStatuspage from "../../assets/statuspage-icon.svg";
 import iconHalp from "../../assets/halp-icon.svg";
 import iconJsm from "../../assets/jsm-icon.svg";
 import iconConfluence from "../../assets/confluence-icon.svg";
-import imgAutomation from "../../assets/confluence-mainpage.png";
+import imgAutomation from "../../assets/connie-mainpage.png";
 import imgHalp from "../../assets/halp-mainpage.png";
 import imgCompass from "../../assets/compass-mainpage.png";
 import imgStatuspage from "../../assets/statuspage-mainpage.png";
