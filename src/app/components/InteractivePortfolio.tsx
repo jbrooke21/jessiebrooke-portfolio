@@ -311,14 +311,14 @@ export default function InteractivePortfolio() {
         {/* Hero Section */}
         <section
           id="hero"
-          className="scroll-mt-[140px] pt-[100px] md:pt-[200px] lg:pt-[280px] pb-20"
+          className="scroll-mt-[140px] pt-[100px] md:pt-[200px] lg:pt-[280px] pb-[100px] md:pb-[200px] lg:pb-[500px]"
         >
           <div className="flex flex-col lg:flex-row items-start justify-between gap-12">
             <motion.div
               initial={{ x: -40, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.15 }}
-              className="max-w-[980px] flex-1"
+              className="order-2 lg:order-1 max-w-[980px] flex-1"
             >
               <h1 className="font-['Yeseva_One'] text-[44px] md:text-[72px] leading-[1.1] mb-8">
                 Hello, I’m <span className="text-[#70b110]">{siteContent.hero.name}</span>.
@@ -328,7 +328,7 @@ export default function InteractivePortfolio() {
               </p>
 
               <motion.button
-                onClick={() => scrollToSection("work")}
+                onClick={() => scrollToSection("skills")}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
@@ -364,12 +364,12 @@ export default function InteractivePortfolio() {
               initial={{ x: 40, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="w-full max-w-[320px] md:max-w-[380px] lg:max-w-[420px] shrink-0 mx-auto lg:mx-0"
+              className="order-1 lg:order-2 w-full max-w-[320px] md:max-w-[380px] lg:max-w-[420px] shrink-0 mx-auto lg:ml-auto"
             >
               <Lottie
                 animationData={heroAnimation}
                 loop
-                className="w-[300px] h-[300px]"
+                className="w-[300px] h-[300px] ml-auto"
               />
             </motion.div>
           </div>
@@ -378,7 +378,7 @@ export default function InteractivePortfolio() {
         {/* Skills Section */}
         <section
           id="skills"
-          className="scroll-mt-[140px] pt-[100px] md:pt-[200px] lg:pt-[280px] pb-20"
+          className="scroll-mt-[140px] pt-[20px] md:pt-[40px] lg:pt-[80px] pb-20"
         >
           <SectionHeader
             eyebrow={siteContent.skills.eyebrow}
@@ -409,7 +409,7 @@ export default function InteractivePortfolio() {
         {/* Experience Section */}
         <section
           id="experience"
-          className="scroll-mt-[140px] pt-[100px] md:pt-[200px] lg:pt-[280px] pb-20"
+          className="scroll-mt-[140px] pt-[40px] md:pt-[100px] lg:pt-[140px] pb-20"
         >
           <SectionHeader eyebrow="What I've been up to" heading="My adventures" />
           <div className="space-y-0">
@@ -458,7 +458,7 @@ export default function InteractivePortfolio() {
         {/* Work Section */}
         <section
           id="work"
-          className="scroll-mt-[140px] pt-[100px] md:pt-[200px] lg:pt-[280px] pb-20"
+          className="scroll-mt-[140px] pt-[40px] md:pt-[100px] lg:pt-[140px] pb-20"
         >
           <div className="flex items-center gap-6 mb-2">
             <p className="font-['Poppins'] text-[12px] tracking-[0.15em] uppercase text-[#70b110]">
