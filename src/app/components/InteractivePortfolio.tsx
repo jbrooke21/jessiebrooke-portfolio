@@ -491,7 +491,7 @@ export default function InteractivePortfolio() {
                   <motion.img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-auto block rounded-[16px]"
+                    className="w-full h-auto block rounded-[16px] border border-black"
                     whileHover={{ scale: 1.01, y: -4 }}
                     transition={{ duration: 0.35 }}
                   />
