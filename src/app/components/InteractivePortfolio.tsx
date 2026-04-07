@@ -87,8 +87,8 @@ const siteContent = {
     { role: "Newbie Freelancer", company: "Web Design", period: "2014–2011" },
   ],
   about: [
-    "I'm a Bay Area product designer with over ten years of experience designing thoughtful, human-centered digital products.",
-    "I'm especially drawn to complex systems, migration work, and information-rich experiences that need clarity, structure, and care.",
+    "I’m a Bay Area–based product designer with over ten years of experience creating thoughtful, human-centered digital products. I’m especially interested in how people interact with information and the systems that shape their daily lives. ",
+    "Outside of design, I’m an avid reader and lifelong bibliophile who loves horror and cheesy action films. I foster kittens and support local TNR efforts, and spend the rest of my time painting, drawing, or exploring the outdoors.",
   ],
   contact: {
     email: "jessbrooke21@gmail.com",
@@ -206,37 +206,37 @@ export default function InteractivePortfolio() {
   const groupedSkills = useMemo(() => siteContent.skills.groups, []);
 
   useEffect(() => {
-  const sectionIds = ["experience", "work", "about"];
+    const sectionIds = ["experience", "work", "about"];
 
-  const handleScrollSpy = () => {
-    if (window.scrollY < 120) {
-      setActiveSection("");
-      return;
-    }
-
-    const viewportAnchor = window.innerHeight * 0.35;
-    let currentSection = "";
-
-    for (const sectionId of sectionIds) {
-      const element = document.getElementById(sectionId);
-      if (!element) continue;
-
-      const rect = element.getBoundingClientRect();
-
-      if (rect.top <= viewportAnchor && rect.bottom >= viewportAnchor) {
-        currentSection = sectionId;
-        break;
+    const handleScrollSpy = () => {
+      if (window.scrollY < 120) {
+        setActiveSection("");
+        return;
       }
-    }
 
-    setActiveSection(currentSection);
-  };
+      const viewportAnchor = window.innerHeight * 0.35;
+      let currentSection = "";
 
-  window.addEventListener("scroll", handleScrollSpy);
-  handleScrollSpy();
+      for (const sectionId of sectionIds) {
+        const element = document.getElementById(sectionId);
+        if (!element) continue;
 
-  return () => window.removeEventListener("scroll", handleScrollSpy);
-}, []);
+        const rect = element.getBoundingClientRect();
+
+        if (rect.top <= viewportAnchor && rect.bottom >= viewportAnchor) {
+          currentSection = sectionId;
+          break;
+        }
+      }
+
+      setActiveSection(currentSection);
+    };
+
+    window.addEventListener("scroll", handleScrollSpy);
+    handleScrollSpy();
+
+    return () => window.removeEventListener("scroll", handleScrollSpy);
+  }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -251,11 +251,13 @@ export default function InteractivePortfolio() {
       top,
       behavior: "smooth",
     });
-};
+  };
 
   return (
     <div className="bg-[#ffffff] min-h-screen">
-      {/* Navigation */}
+      {/* =========================================================
+          NAVIGATION
+      ========================================================= */}
       <motion.nav
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -310,7 +312,9 @@ export default function InteractivePortfolio() {
       </motion.nav>
 
       <Container>
-        {/* Hero Section */}
+        {/* =========================================================
+            HERO SECTION
+        ========================================================= */}
         <section
           id="hero"
           className="scroll-mt-[140px] pt-[100px] md:pt-[200px] lg:pt-[250px] pb-[100px] md:pb-[200px] lg:pb-[500px]"
@@ -363,21 +367,23 @@ export default function InteractivePortfolio() {
             </motion.div>
 
             <motion.div
-              initial={{ x: 40, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="order-1 lg:order-2 w-full max-w-[320px] md:max-w-[380px] lg:max-w-[420px] shrink-0 mx-auto lg:ml-auto"
-            >
-              <Lottie
-                animationData={heroAnimation}
-                loop
-                className="w-[300px] h-[300px] ml-auto"
-              />
-            </motion.div>
+                initial={{ x: 40, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="order-1 lg:order-2 w-full max-w-[260px] sm:max-w-[300px] md:max-w-[380px] lg:max-w-[420px] shrink-0 mx-auto lg:ml-auto lg:mr-0"
+              >
+                <Lottie
+                  animationData={heroAnimation}
+                  loop
+                  className="w-[220px] h-[220px] sm:w-[260px] sm:h-[260px] md:w-[300px] md:h-[300px] mx-auto lg:ml-auto lg:mr-0"
+                />
+              </motion.div>
           </div>
         </section>
 
-        {/* Skills Section */}
+        {/* =========================================================
+            SKILLS SECTION
+        ========================================================= */}
         <section
           id="skills"
           className="scroll-mt-[140px] pt-[20px] md:pt-[40px] lg:pt-[80px] pb-20"
@@ -408,7 +414,9 @@ export default function InteractivePortfolio() {
           </div>
         </section>
 
-        {/* Experience Section */}
+        {/* =========================================================
+            EXPERIENCE SECTION
+        ========================================================= */}
         <section
           id="experience"
           className="scroll-mt-[140px] pt-[40px] md:pt-[100px] lg:pt-[140px] pb-20"
@@ -424,7 +432,7 @@ export default function InteractivePortfolio() {
                 transition={{ duration: 0.5, delay: index * 0.05 }}
                 className="bg-white border-b border-[#70b110] border-solid"
               >
-               {/* Mobile Layout - Two Column */}
+                {/* Mobile Layout - Two Column */}
                 <div className="flex justify-between items-start py-6 md:hidden">
                   <p className="font-['Poppins'] font-light text-[14px] sm:text-[16px] leading-[1.4] pr-4 flex-1">
                     {item.role}
@@ -457,7 +465,9 @@ export default function InteractivePortfolio() {
           </div>
         </section>
 
-        {/* Work Section */}
+        {/* =========================================================
+            WORK SECTION
+        ========================================================= */}
         <section
           id="work"
           className="scroll-mt-[140px] pt-[40px] md:pt-[100px] lg:pt-[140px] pb-20"
@@ -493,7 +503,7 @@ export default function InteractivePortfolio() {
                   <motion.img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-auto block rounded-[12px] md:rounded-[16px] border border-black"
+                    className="w-full h-auto block rounded-[6px] md:rounded-[12px] border border-black"
                     whileHover={{ scale: 1.01, y: -4 }}
                     transition={{ duration: 0.35 }}
                   />
@@ -512,10 +522,12 @@ export default function InteractivePortfolio() {
           </div>
         </section>
 
-        {/* About Section */}
+        {/* =========================================================
+            ABOUT SECTION
+        ========================================================= */}
         <section
           id="about"
-          className="scroll-mt-[140px] pt-[100px] md:pt-[200px] lg:pt-[280px] pb-24 md:pb-40 lg:pb-60"
+          className="scroll-mt-[140px] pt-[80px] md:pt-[160px] lg:pt-[220px] pb-20 md:pb-30 lg:pb-40"
         >
           <SectionHeader eyebrow="A bit more" heading="About me" />
 
@@ -568,7 +580,9 @@ export default function InteractivePortfolio() {
         </section>
       </Container>
 
-      {/* Footer */}
+      {/* =========================================================
+          FOOTER
+      ========================================================= */}
       <Footer />
     </div>
   );
