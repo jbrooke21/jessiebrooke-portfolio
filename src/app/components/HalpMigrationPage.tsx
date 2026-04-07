@@ -23,7 +23,9 @@ export default function HalpMigrationPage() {
       ========================================================= */}
       <ProjectHeader />
 
-      {/* ✅ subtle page fade wrapper */}
+      {/* =========================================================
+          PAGE FADE WRAPPER
+      ========================================================= */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -33,12 +35,12 @@ export default function HalpMigrationPage() {
         {/* =========================================================
             HERO IMAGE
         ========================================================= */}
-        <div className="mt-[192px] w-full">
+        <div className="mt-[160px] md:mt-[192px] w-full">
           <Container>
-            <div className="rounded-[12px]">
+            <div className="rounded-[6px] md:rounded-[12px]">
               <img
                 alt="Halp migration interface"
-                className="w-full h-auto object-cover rounded-[12px] border border-black"
+                className="w-full h-auto object-cover rounded-[6px] md:rounded-[12px] border border-black"
                 src={imgQueueChecklist1}
               />
             </div>
@@ -50,12 +52,12 @@ export default function HalpMigrationPage() {
         ========================================================= */}
         <div className="mt-[52px] w-full">
           <Container>
-            <div className="flex flex-col gap-4 items-start">
-              <div className="flex items-center gap-2">
+            <div className="flex flex-col gap-[16px] items-start">
+              <div className="flex items-start gap-3 md:gap-4">
                 <img
                   src={halpIcon}
                   alt="Halp"
-                  className="w-[56px] h-[56px] rounded-[16px]"
+                  className="w-[40px] h-[40px] sm:w-[40px] sm:h-[40px] md:w-[48px] md:h-[48px]"
                 />
 
                 <span className="text-[28px]">→</span>
@@ -63,10 +65,10 @@ export default function HalpMigrationPage() {
                 <img
                   src={jsmIcon}
                   alt="Jira Service Management"
-                  className="w-[56px] h-[56px] rounded-[16px]"
+                  className="w-[40px] h-[40px] sm:w-[40px] sm:h-[40px] md:w-[48px] md:h-[48px]"
                 />
 
-                <h1 className="text-[48px] font-['Poppins'] font-medium text-[#292a2e] ml-4 leading-[1.1]">
+                <h1 className="font-['Poppins'] text-[28px] sm:text-[34px] md:text-[48px] leading-[1.1] text-[#292a2e]">
                   Atlassian Halp to JSM
                 </h1>
               </div>
@@ -84,6 +86,9 @@ export default function HalpMigrationPage() {
         <div className="mt-[64px] mb-[100px] w-full">
           <Container>
             <div className="flex flex-col gap-[64px] items-start">
+              {/* =====================================================
+                  PROJECT OVERVIEW
+              ===================================================== */}
               <div className="flex flex-col gap-[24px] items-start not-italic text-[20px] text-black w-full">
                 <div className="flex flex-col font-['Poppins'] font-medium justify-center w-full">
                   <p className="leading-[normal]">Project overview</p>
@@ -136,6 +141,9 @@ export default function HalpMigrationPage() {
                   </p>
                 </div>
 
+                {/* =====================================================
+                    CUSTOMER NEEDS / DESIGN CONSIDERATIONS
+                ===================================================== */}
                 <div className="flex flex-col font-['Poppins'] font-light justify-center w-full mt-12">
                   <h3 className="font-['Poppins'] font-medium text-[20px] leading-[1.3] text-black mb-[32px]">
                     Customers needed to:
@@ -173,6 +181,9 @@ export default function HalpMigrationPage() {
                     </li>
                   </ul>
 
+                  {/* =====================================================
+                      MIGRATION MESSAGING IMAGE
+                  ===================================================== */}
                   <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
@@ -183,13 +194,19 @@ export default function HalpMigrationPage() {
                     <img
                       src={imgHalpSlack}
                       alt="Halp migration messaging in Slack"
-                      className="w-full h-auto rounded-[16px]"
+                      className="w-full h-auto rounded-[6px] md:rounded-[12px]"
                     />
                   </motion.div>
                 </div>
               </div>
 
+              {/* =====================================================
+                  FEATURE MEDIA SECTIONS
+              ===================================================== */}
               <div className="w-full mt-32 flex flex-col gap-40">
+                {/* =====================================================
+                    SECTION 1
+                ===================================================== */}
                 <motion.div
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
@@ -204,7 +221,7 @@ export default function HalpMigrationPage() {
                       loop
                       muted
                       playsInline
-                      className="w-full h-auto rounded-[12px] border border-black"
+                      className="w-full h-auto rounded-[6px] md:rounded-[12px] border border-black"
                     />
                   </div>
 
@@ -220,6 +237,9 @@ export default function HalpMigrationPage() {
                   </div>
                 </motion.div>
 
+                {/* =====================================================
+                    SECTION 2
+                ===================================================== */}
                 <motion.div
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
@@ -246,11 +266,14 @@ export default function HalpMigrationPage() {
                       loop
                       muted
                       playsInline
-                      className="w-full h-auto rounded-[12px] border border-black"
+                      className="w-full h-auto rounded-[6px] md:rounded-[12px] border border-black"
                     />
                   </div>
                 </motion.div>
 
+                {/* =====================================================
+                    SECTION 3
+                ===================================================== */}
                 <motion.div
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
@@ -265,7 +288,7 @@ export default function HalpMigrationPage() {
                       loop
                       muted
                       playsInline
-                      className="w-full h-auto rounded-[12px] border border-black"
+                      className="w-full h-auto rounded-[6px] md:rounded-[12px] border border-black"
                     />
                   </div>
 
@@ -286,6 +309,9 @@ export default function HalpMigrationPage() {
         </div>
       </motion.div>
 
+      {/* =========================================================
+          FOOTER
+      ========================================================= */}
       <Footer />
     </div>
   );

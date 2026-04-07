@@ -23,6 +23,9 @@ export default function CompassScorecardsPage() {
       ========================================================= */}
       <ProjectHeader />
 
+      {/* =========================================================
+          PAGE FADE WRAPPER
+      ========================================================= */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -32,12 +35,12 @@ export default function CompassScorecardsPage() {
         {/* =========================================================
             HERO IMAGE
         ========================================================= */}
-        <div className="mt-[192px] w-full">
+        <div className="mt-[160px] md:mt-[192px] w-full">
           <Container>
-            <div className="rounded-[12px]">
+            <div className="rounded-[6px] md:rounded-[12px]">
               <img
                 alt="Compass Scorecards interface"
-                className="w-full h-auto object-cover rounded-[12px] border border-black"
+                className="w-full h-auto object-cover rounded-[6px] md:rounded-[12px] border border-black"
                 src={heroImage}
               />
             </div>
@@ -49,15 +52,15 @@ export default function CompassScorecardsPage() {
         ========================================================= */}
         <div className="mt-[52px] w-full">
           <Container>
-            <div className="flex flex-col gap-4 items-start">
-              <div className="flex items-center gap-4">
+            <div className="flex flex-col gap-[16px] items-start">
+              <div className="flex items-start gap-3 md:gap-4">
                 <img
                   src={compassIcon}
                   alt="Compass"
-                  className="w-[56px] h-[56px] rounded-[16px]"
+                  className="w-[40px] h-[40px] sm:w-[40px] sm:h-[40px] md:w-[48px] md:h-[48px]"
                 />
 
-                <h1 className="text-[48px] font-['Poppins'] font-medium text-[#292a2e] leading-[1.1]">
+                <h1 className="font-['Poppins'] text-[28px] sm:text-[34px] md:text-[48px] leading-[1.1] text-[#292a2e]">
                   Atlassian Compass – Scorecards
                 </h1>
               </div>
@@ -206,7 +209,7 @@ export default function CompassScorecardsPage() {
                     loop
                     muted
                     playsInline
-                    className="w-full h-auto rounded-[12px] border border-black"
+                    className="w-full h-auto rounded-[6px] md:rounded-[12px] border border-black"
                   />
                 </motion.div>
 
@@ -217,7 +220,7 @@ export default function CompassScorecardsPage() {
                   transition={{ duration: 0.6, delay: 0.08 }}
                   className="flex flex-col gap-4"
                 >
-                  <div className="bg-[#f1f1f1] rounded-[12px] p-6">
+                  <div className="bg-[#f1f1f1] rounded-[6px] md:rounded-[12px] p-6">
                     <h3 className="font-['Poppins'] font-medium text-[20px] text-black mb-3">
                       Instant health signal
                     </h3>
@@ -228,7 +231,7 @@ export default function CompassScorecardsPage() {
                     </p>
                   </div>
 
-                  <div className="bg-[#f1f1f1] rounded-[12px] p-6">
+                  <div className="bg-[#f1f1f1] rounded-[6px] md:rounded-[12px] p-6">
                     <h3 className="font-['Poppins'] font-medium text-[20px] text-black mb-3">
                       Faster path to improvement
                     </h3>
@@ -238,7 +241,7 @@ export default function CompassScorecardsPage() {
                     </p>
                   </div>
 
-                  <div className="bg-[#f1f1f1] rounded-[12px] p-6">
+                  <div className="bg-[#f1f1f1] rounded-[6px] md:rounded-[12px] p-6">
                     <h3 className="font-['Poppins'] font-medium text-[20px] text-black mb-3">
                       Clear responsibility and reach
                     </h3>
@@ -264,97 +267,96 @@ export default function CompassScorecardsPage() {
                 <img
                   src={createScorecardImage}
                   alt="Compass scorecards overview"
-                  className="w-full h-auto rounded-[12px]"
+                  className="w-full h-auto rounded-[6px] md:rounded-[12px]"
                 />
               </motion.div>
 
               {/* =====================================================
-                  TWO SMALLER IMAGE SECTIONS
-              ===================================================== */}
-              <div className="w-full mt-8 flex flex-col gap-48">
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.6 }}
-                  className="grid grid-cols-1 md:grid-cols-[1.3fr_0.7fr] gap-8 items-start mt-32"
-                >
-                  <div className="w-full">
-                    <div className="relative w-full h-[420px] rounded-[16px] overflow-hidden border border-black">
-                      <img
-                        src={compassImage2}
-                        alt=""
-                        aria-hidden="true"
-                        className="absolute inset-0 w-full h-full object-cover"
-                      />
+    TWO SMALLER IMAGE SECTIONS
+===================================================== */}
+<div className="w-full mt-8 flex flex-col gap-24 gap-48">
+  <motion.div
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    viewport={{ once: true, margin: "-100px" }}
+    transition={{ duration: 0.6 }}
+    className="grid grid-cols-1 md:grid-cols-[1.3fr_0.7fr] gap-8 items-start mt-16 md:mt-32"
+  >
+    <div className="w-full">
+      <div className="relative w-full h-[280px] sm:h-[320px] md:h-[360px] lg:h-[400px] rounded-[6px] md:rounded-[16px] overflow-hidden border border-black">
+        <img
+          src={compassImage2}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
 
-                      <video
-                        src={compassVideo2}
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[86%] object-contain rounded-[12px]"
-                      />
-                    </div>
-                  </div>
+        <video
+          src={compassVideo2}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[92%] sm:w-[88%] md:w-[80%] lg:w-[76%] object-contain rounded-[6px] md:rounded-[12px]"
+        />
+      </div>
+    </div>
 
-                  <div className="w-full max-w-[420px]">
-                    <h3 className="font-['Poppins'] font-medium text-[20px] mb-4 text-black">
-                      Criteria that felt clear and actionable
-                    </h3>
-                    <p className="font-['Poppins'] font-light text-[16px] md:text-[18px] leading-[1.5] text-black">
-                      The scorecard experience needed to make abstract operational
-                      standards concrete, so teams could understand what each
-                      health signal meant and what needed attention.
-                    </p>
-                  </div>
-                </motion.div>
+    <div className="w-full max-w-[420px]">
+      <h3 className="font-['Poppins'] font-medium text-[20px] mb-4 text-black">
+        Criteria that felt clear and actionable
+      </h3>
+      <p className="font-['Poppins'] font-light text-[16px] md:text-[18px] leading-[1.5] text-black">
+        The scorecard experience needed to make abstract operational
+        standards concrete, so teams could understand what each
+        health signal meant and what needed attention.
+      </p>
+    </div>
+  </motion.div>
 
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.6 }}
-                  className="grid grid-cols-1 md:grid-cols-[0.7fr_1.3fr] gap-8 items-start"
-                >
-                  <div className="w-full max-w-[420px] order-2 md:order-1">
-                    <h3 className="font-['Poppins'] font-medium text-[20px] mb-4 text-black">
-                      Flexible enough for different teams
-                    </h3>
-                    <p className="font-['Poppins'] font-light text-[16px] md:text-[18px] leading-[1.5] text-black">
-                      Scorecards had to support variation across services and team
-                      maturity while still giving organizations a consistent way
-                      to evaluate software health.
-                    </p>
-                  </div>
+  <motion.div
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    viewport={{ once: true, margin: "-100px" }}
+    transition={{ duration: 0.6 }}
+    className="grid grid-cols-1 md:grid-cols-[0.7fr_1.3fr] gap-8 items-start"
+  >
+    <div className="w-full max-w-[420px] order-2 md:order-1">
+      <h3 className="font-['Poppins'] font-medium text-[20px] mb-4 text-black">
+        Flexible enough for different teams
+      </h3>
+      <p className="font-['Poppins'] font-light text-[16px] md:text-[18px] leading-[1.5] text-black">
+        Scorecards had to support variation across services and team
+        maturity while still giving organizations a consistent way
+        to evaluate software health.
+      </p>
+    </div>
 
-                  <div className="w-full order-1 md:order-2">
-                    <div className="relative w-full h-[420px] rounded-[16px] overflow-hidden border border-black">
-                      <img
-                        src={compassImage3}
-                        alt=""
-                        aria-hidden="true"
-                        className="absolute inset-0 w-full h-full object-cover"
-                      />
+    <div className="w-full order-1 md:order-2">
+      <div className="relative w-full h-[280px] sm:h-[320px] md:h-[360px] lg:h-[400px] rounded-[6px] md:rounded-[16px] overflow-hidden border border-black">
+        <img
+          src={compassImage3}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
 
-                      <video
-                        src={compassVideo3}
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[86%] object-contain rounded-[12px]"
-                      />
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
-            </div>
-          </Container>
-        </div>
-      </motion.div>
-
+        <video
+          src={compassVideo3}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[92%] sm:w-[88%] md:w-[80%] lg:w-[76%] object-contain rounded-[6px] md:rounded-[12px]"
+        />
+      </div>
+    </div>
+  </motion.div>
+</div>
+</div>
+</Container>
+</div>
+</motion.div>
       {/* =========================================================
           FOOTER
       ========================================================= */}

@@ -174,17 +174,19 @@ function ProjectIcons({
       <img
         src={project.iconSrc}
         alt=""
-        className="h-10 w-auto shrink-0 object-contain"
+        className="h-7 sm:h-8 md:h-10 w-auto shrink-0 object-contain"
         aria-hidden="true"
       />
 
       {project.secondIconSrc && (
         <>
-          <span className="text-[22px] leading-none text-black shrink-0">→</span>
+          <span className="text-[16px] sm:text-[18px] md:text-[22px] leading-none text-black shrink-0">
+            →
+          </span>
           <img
             src={project.secondIconSrc}
             alt=""
-            className="h-10 w-auto shrink-0 object-contain"
+            className="h-7 sm:h-8 md:h-10 w-auto shrink-0 object-contain"
             aria-hidden="true"
           />
         </>
@@ -311,7 +313,7 @@ export default function InteractivePortfolio() {
         {/* Hero Section */}
         <section
           id="hero"
-          className="scroll-mt-[140px] pt-[100px] md:pt-[200px] lg:pt-[280px] pb-[100px] md:pb-[200px] lg:pb-[500px]"
+          className="scroll-mt-[140px] pt-[100px] md:pt-[200px] lg:pt-[250px] pb-[100px] md:pb-[200px] lg:pb-[500px]"
         >
           <div className="flex flex-col lg:flex-row items-start justify-between gap-12">
             <motion.div
@@ -470,7 +472,7 @@ export default function InteractivePortfolio() {
             My work
           </h2>
 
-          <div className="flex flex-col gap-40">
+          <div className="flex flex-col gap-28 md:gap-40">
             {projects.map((project, index) => (
               <motion.div
                 key={project.id}
@@ -478,7 +480,7 @@ export default function InteractivePortfolio() {
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: index * 0.08 }}
-                className="flex flex-col gap-6"
+                className="flex flex-col gap-5 md:gap-6"
               >
                 <div
                   className={`${project.link ? "cursor-pointer" : ""}`}
@@ -491,24 +493,19 @@ export default function InteractivePortfolio() {
                   <motion.img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-auto block rounded-[16px] border border-black"
+                    className="w-full h-auto block rounded-[12px] md:rounded-[16px] border border-black"
                     whileHover={{ scale: 1.01, y: -4 }}
                     transition={{ duration: 0.35 }}
                   />
                 </div>
 
-                <div className="flex flex-col gap-3">
-                  <div className="flex items-center gap-4 flex-wrap">
+                <div className="flex flex-col gap-1 md:gap-2">
+                  <div className="flex items-start gap-3 md:gap-4">
                     <ProjectIcons project={project} />
-                    <p className="font-['Poppins'] font-medium text-[30px] md:text-[40px] leading-[1.2] text-[#2b2b2b]">
+                    <p className="font-['Poppins'] font-normal md:font-medium text-[22px] sm:text-[26px] md:text-[40px] leading-[1.15] text-[#2b2b2b]">
                       {project.company}
                     </p>
                   </div>
-
-                  <h3 className="font-['Poppins'] font-light text-[18px] md:text-[24px] leading-[1.3] text-black">
-                    {project.title}
-                  </h3>
-
                 </div>
               </motion.div>
             ))}
@@ -518,11 +515,11 @@ export default function InteractivePortfolio() {
         {/* About Section */}
         <section
           id="about"
-          className="scroll-mt-[140px] pt-[100px] md:pt-[200px] lg:pt-[280px] pb-60"
+          className="scroll-mt-[140px] pt-[100px] md:pt-[200px] lg:pt-[280px] pb-24 md:pb-40 lg:pb-60"
         >
           <SectionHeader eyebrow="A bit more" heading="About me" />
 
-          <div className="flex flex-col lg:flex-row items-start gap-24">
+          <div className="flex flex-col items-center lg:flex-row lg:items-start gap-16 md:gap-24">
             <motion.div
               initial={{ opacity: 0, scale: 0.94 }}
               whileInView={{ opacity: 1, scale: 1 }}

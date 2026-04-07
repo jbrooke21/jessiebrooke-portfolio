@@ -20,20 +20,31 @@ import autoVideo3 from "../../assets/automation-3.mp4";
 
 function HeroVideoCard() {
   return (
-    <div className="relative w-full h-[760px] rounded-[16px] overflow-hidden">
+    <div className="relative w-full rounded-[8px] md:rounded-[16px] overflow-hidden md:h-[760px]">
+      
+      {/* Background (hide on mobile) */}
       <img
         src={automationHeroBg}
         alt=""
         aria-hidden="true"
-        className="absolute inset-0 w-full h-full object-cover"
+        className="hidden md:block absolute inset-0 w-full h-full object-cover"
       />
+
+      {/* Video */}
       <video
         src={automationHeroVideo}
         autoPlay
         loop
         muted
         playsInline
-        className="absolute top-[18%] left-[50%] -translate-x-1/2 w-[60%] object-contain rounded-[12px] border border-black/10"
+        className="
+          w-full
+          md:absolute md:top-[18%] md:left-[50%] md:-translate-x-1/2
+          md:w-[60%]
+          object-contain
+          rounded-[6px] md:rounded-[12px]
+          border border-black/10
+        "
       />
     </div>
   );
@@ -41,7 +52,7 @@ function HeroVideoCard() {
 
 function LargeFeatureCard() {
   return (
-    <div className="relative w-full h-[760px] rounded-[16px] overflow-hidden border border-black">
+    <div className="relative w-full h-[340px] sm:h-[420px] md:h-[560px] lg:h-[760px] rounded-[6px] md:rounded-[16px] overflow-hidden border border-black">
       <img
         src={autoBg1}
         alt=""
@@ -54,7 +65,13 @@ function LargeFeatureCard() {
         loop
         muted
         playsInline
-        className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[92%] object-contain rounded-[12px]"
+        className="
+          absolute top-[50%] left-[50%]
+          -translate-x-1/2 -translate-y-1/2
+          w-[94%] sm:w-[92%]
+          object-contain
+          rounded-[6px] md:rounded-[12px]
+        "
       />
     </div>
   );
@@ -62,7 +79,7 @@ function LargeFeatureCard() {
 
 function TriggerCard() {
   return (
-    <div className="relative w-full h-[420px] rounded-[16px] overflow-hidden border border-black">
+    <div className="relative w-full h-[300px] sm:h-[360px] md:h-[380px] rounded-[6px] md:rounded-[16px] overflow-hidden border border-black">
       <img
         src={autoBg2}
         alt=""
@@ -75,7 +92,7 @@ function TriggerCard() {
         loop
         muted
         playsInline
-        className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[86%] object-contain rounded-[12px]"
+        className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[90%] md:w-[90%] object-contain rounded-[6px] md:rounded-[12px]"
       />
     </div>
   );
@@ -83,7 +100,7 @@ function TriggerCard() {
 
 function NotificationCard() {
   return (
-    <div className="relative w-full h-[420px] rounded-[16px] overflow-hidden border border-black">
+    <div className="relative w-full h-[300px] sm:h-[360px] md:h-[380px] rounded-[6px] md:rounded-[16px] overflow-hidden border border-black">
       <img
         src={autoBg3}
         alt=""
@@ -96,7 +113,7 @@ function NotificationCard() {
         loop
         muted
         playsInline
-        className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[80%] object-contain rounded-[12px]"
+        className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[84%] md:w-[84%] object-contain rounded-[6px] md:rounded-[12px]"
       />
     </div>
   );
@@ -121,12 +138,12 @@ export default function ConfluenceAutomationPage() {
         {/* =========================================================
             HERO IMAGE
         ========================================================= */}
-        <div className="mt-[192px] w-full">
+       <div className="mt-[160px] md:mt-[192px] w-full">
           <Container>
-            <div className="rounded-[12px]">
+            <div className="rounded-[6px] md:rounded-[12px]">
               <img
                 alt="Confluence automations main page"
-                className="w-full h-auto object-cover rounded-[12px] border border-black"
+                className="w-full h-auto object-cover rounded-[6px] md:rounded-[12px] border border-black"
                 src={heroImage}
               />
             </div>
@@ -139,13 +156,13 @@ export default function ConfluenceAutomationPage() {
         <div className="mt-[52px] w-full">
           <Container>
             <div className="flex flex-col gap-[16px] items-start">
-              <div className="flex items-start gap-4">
+              <div className="flex items-start gap-3 md:gap-4">
                 <img
                   src={confluenceIcon}
                   alt="Confluence"
-                  className="w-[48px] h-[48px] object-contain"
+                  className="w-[40px] h-[40px] sm:w-[40px] sm:h-[40px] md:w-[48px] md:h-[48px]"
                 />
-                <h1 className="font-['Poppins'] text-[48px] text-[#292a2e] leading-[1.1]">
+                <h1 className="font-['Poppins'] text-[28px] sm:text-[34px] md:text-[48px] leading-[1.1] text-[#292a2e]">
                   Atlassian Confluence – Automations
                 </h1>
               </div>
@@ -305,11 +322,11 @@ export default function ConfluenceAutomationPage() {
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.6 }}
-                    className="flex flex-col gap-6"
+                    className="flex flex-col gap-3 md:gap-6"
                   >
                     <TriggerCard />
 
-                    <div className="mt-6 flex flex-col gap-3">
+                    <div className="mt-3 md:mt-6 flex flex-col gap-2 md:gap-3">
                       <h4 className="font-['Poppins'] font-medium text-[18px] text-black">
                         Automated workflow triggers
                       </h4>
@@ -326,11 +343,11 @@ export default function ConfluenceAutomationPage() {
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.6, delay: 0.08 }}
-                    className="flex flex-col gap-6"
+                    className="flex flex-col gap-3 md:gap-6"
                   >
                     <NotificationCard />
 
-                    <div className="mt-6 flex flex-col gap-3">
+                    <div className="mt-3 md:mt-6 flex flex-col gap-2 md:gap-3">
                       <h4 className="font-['Poppins'] font-medium text-[18px] text-black">
                         Automated team notifications
                       </h4>

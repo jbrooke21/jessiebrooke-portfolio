@@ -20,7 +20,7 @@ import migrationVideo from "../../assets/sp-migration-1.mp4";
 
 function FinalMigrationCard() {
   return (
-    <div className="relative w-full h-[700px] rounded-[16px] overflow-hidden border border-black">
+    <div className="relative w-full h-[320px] sm:h-[420px] md:h-[560px] lg:h-[700px] rounded-[6px] md:rounded-[16px] overflow-hidden border border-black">
       <img
         src={migrationBgImage}
         alt=""
@@ -33,7 +33,7 @@ function FinalMigrationCard() {
         loop
         muted
         playsInline
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[82%] md:w-[78%] max-w-[1100px] object-contain rounded-[12px] shadow-lg"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[92%] sm:w-[88%] md:w-[82%] lg:w-[78%] max-w-[1100px] object-contain rounded-[6px] md:rounded-[12px] shadow-lg"
       />
     </div>
   );
@@ -51,6 +51,9 @@ export default function StatuspageMigrationPage() {
       ========================================================= */}
       <ProjectHeader />
 
+      {/* =========================================================
+          PAGE FADE WRAPPER
+      ========================================================= */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -60,12 +63,12 @@ export default function StatuspageMigrationPage() {
         {/* =========================================================
             HERO IMAGE
         ========================================================= */}
-        <div className="mt-[192px] w-full">
+        <div className="mt-[160px] md:mt-[192px] w-full">
           <Container>
-            <div className="rounded-[12px]">
+            <div className="rounded-[6px] md:rounded-[12px]">
               <img
                 alt="Statuspage identity migration interface"
-                className="w-full h-auto object-cover rounded-[12px] border border-black"
+                className="w-full h-auto object-cover rounded-[6px] md:rounded-[12px] border border-black"
                 src={heroImage}
               />
             </div>
@@ -77,15 +80,15 @@ export default function StatuspageMigrationPage() {
         ========================================================= */}
         <div className="mt-[52px] w-full">
           <Container>
-            <div className="flex flex-col gap-4 items-start">
-              <div className="flex items-center gap-4">
+            <div className="flex flex-col gap-[16px] items-start">
+              <div className="flex items-start gap-3 md:gap-4">
                 <img
                   src={statuspageIcon}
                   alt="Statuspage"
-                  className="w-[56px] h-[56px] rounded-[16px]"
+                  className="w-[40px] h-[40px] sm:w-[40px] sm:h-[40px] md:w-[48px] md:h-[48px] rounded-[10px] md:rounded-[16px]"
                 />
 
-                <h1 className="text-[48px] font-['Poppins'] font-medium text-[#292a2e] leading-[1.1]">
+                <h1 className="font-['Poppins'] text-[28px] sm:text-[34px] md:text-[48px] leading-[1.1] text-[#292a2e]">
                   Atlassian Statuspage – Identity migrations
                 </h1>
               </div>
@@ -250,11 +253,11 @@ export default function StatuspageMigrationPage() {
                   transition={{ duration: 0.6 }}
                   className="flex flex-col gap-4"
                 >
-                  <div className="w-full h-[340px] md:h-[380px] rounded-[12px] overflow-hidden border border-black">
+                  <div className="w-full rounded-[6px] md:rounded-[12px] overflow-hidden border border-black">
                     <img
                       src={phaseOneImage}
                       alt="Phase 1 Statuspage migration"
-                      className="w-full h-full object-cover"
+                      className="w-full h-auto object-contain"
                     />
                   </div>
 
@@ -278,11 +281,11 @@ export default function StatuspageMigrationPage() {
                   transition={{ duration: 0.6, delay: 0.08 }}
                   className="flex flex-col gap-4"
                 >
-                  <div className="w-full h-[340px] md:h-[380px] rounded-[12px] overflow-hidden border border-black">
+                  <div className="w-full rounded-[6px] md:rounded-[12px] overflow-hidden border border-black">
                     <img
                       src={phaseTwoImage}
                       alt="Phase 2 Statuspage migration"
-                      className="w-full h-full object-cover"
+                      className="w-full h-auto object-contain"
                     />
                   </div>
 
@@ -327,7 +330,7 @@ export default function StatuspageMigrationPage() {
                     <img
                       src={phaseThreeImage1}
                       alt="New user, new site"
-                      className="w-full h-auto rounded-[12px] border border-black"
+                      className="w-full h-auto rounded-[6px] md:rounded-[12px] border border-black"
                     />
                     <p className="font-['Poppins'] font-light text-[15px] md:text-[16px] text-black text-center">
                       New user, new site
@@ -344,7 +347,7 @@ export default function StatuspageMigrationPage() {
                     <img
                       src={phaseThreeImage2}
                       alt="Existing user, existing site"
-                      className="w-full h-auto rounded-[12px] border border-black"
+                      className="w-full h-auto rounded-[6px] md:rounded-[12px] border border-black"
                     />
                     <p className="font-['Poppins'] font-light text-[15px] md:text-[16px] text-black text-center">
                       Existing user, existing site
@@ -361,7 +364,7 @@ export default function StatuspageMigrationPage() {
                     <img
                       src={phaseThreeImage3}
                       alt="Existing user, new site"
-                      className="w-full h-auto rounded-[12px] border border-black"
+                      className="w-full h-auto rounded-[6px] md:rounded-[12px] border border-black"
                     />
                     <p className="font-['Poppins'] font-light text-[15px] md:text-[16px] text-black text-center">
                       Existing user, new site
@@ -378,7 +381,7 @@ export default function StatuspageMigrationPage() {
                     <img
                       src={phaseThreeImage4}
                       alt="All roads lead to creation"
-                      className="w-full h-auto rounded-[12px] border border-black"
+                      className="w-full h-auto rounded-[6px] md:rounded-[12px] border border-black"
                     />
                     <p className="font-['Poppins'] font-light text-[15px] md:text-[16px] text-black text-center">
                       All roads lead to creation
@@ -413,7 +416,7 @@ export default function StatuspageMigrationPage() {
                   <img
                     src={phaseFourImage}
                     alt="Phase 4 identity migration flow"
-                    className="w-full h-auto rounded-[12px]"
+                    className="w-full h-auto rounded-[6px] md:rounded-[12px]"
                   />
                 </motion.div>
               </div>
