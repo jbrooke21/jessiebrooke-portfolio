@@ -85,7 +85,7 @@ export default function StatuspageMigrationPage() {
                 <img
                   src={statuspageIcon}
                   alt="Statuspage"
-                  className="w-[40px] h-[40px] sm:w-[40px] sm:h-[40px] md:w-[48px] md:h-[48px] rounded-[10px] md:rounded-[16px]"
+                  className="hidden md:block w-[48px] h-[48px]"
                 />
 
                 <h1 className="font-['Poppins'] text-[28px] sm:text-[34px] md:text-[48px] leading-[1.1] text-[#292a2e]">

@@ -44,12 +44,14 @@ const siteContent = {
         items: [
           "Figma suite",
           "Framer",
-          "Atlassian suite",
-          "Microsoft suite",
           "Notion",
           "Adobe suite",
           "Google suite",
+          "Microsoft suite",
+          "Atlassian suite",
+          "Atlassian Intelligence",
           "V0",
+          "ChatGPT",
           "Lovable",
           "Claude",
           "Replit",
@@ -170,7 +172,7 @@ function ProjectIcons({
   project: (typeof projects)[number];
 }) {
   return (
-    <div className="flex items-center gap-2 shrink-0">
+    <div className="hidden md:flex items-center gap-2 shrink-0">
       <img
         src={project.iconSrc}
         alt=""
@@ -414,56 +416,67 @@ export default function InteractivePortfolio() {
           </div>
         </section>
 
-        {/* =========================================================
-            EXPERIENCE SECTION
-        ========================================================= */}
-        <section
-          id="experience"
-          className="scroll-mt-[140px] pt-[40px] md:pt-[100px] lg:pt-[140px] pb-20"
-        >
-          <SectionHeader eyebrow="What I've been up to" heading="My adventures" />
-          <div className="space-y-0">
-            {siteContent.timeline.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ x: -30, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-                className="bg-white border-b border-[#70b110] border-solid"
-              >
-                {/* Mobile Layout - Two Column */}
-                <div className="flex justify-between items-start py-6 md:hidden">
-                  <p className="font-['Poppins'] font-light text-[14px] sm:text-[16px] leading-[1.4] pr-4 flex-1">
-                    {item.role}
-                  </p>
-                  <p className="font-['Poppins'] font-light text-[14px] sm:text-[16px] leading-[1.4] text-right">
-                    {item.company}
-                  </p>
-                </div>
+              {/* =========================================================
+                EXPERIENCE SECTION
+            ========================================================= */}
+            <section
+              id="experience"
+              className="scroll-mt-[140px] pt-[40px] md:pt-[100px] lg:pt-[140px] pb-20"
+            >
+              <SectionHeader eyebrow="What I've been up to" heading="My adventures" />
+              <div className="space-y-0">
+                {siteContent.timeline.map((item, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ x: -30, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.05 }}
+                    className="bg-white border-b border-[#70b110] border-solid"
+                  >
+                    {/* Mobile Layout */}
+                    <div className="block md:hidden py-6">
+                      <div className="flex flex-col gap-1">
+                        <p className="font-['Poppins'] font-medium text-[16px] leading-[1.4]">
+                          {item.company}
+                        </p>
+                        <p className="font-['Poppins'] font-light text-[16px] leading-[1.4]">
+                          {item.role}
+                        </p>
+                        <p className="font-['Poppins'] font-light text-[16px] leading-[1.4] text-black/60">
+                          {item.period}
+                        </p>
+                      </div>
+                    </div>
 
-                {/* Desktop Layout - Three Column */}
-                <div className="hidden md:flex gap-[13px] items-center py-[35px]">
-                  <div className="flex items-center w-[480px] shrink-0">
-                    <p className="font-['Poppins'] font-light text-[18px] lg:text-[24px] leading-normal">
-                      {item.role}
-                    </p>
-                  </div>
-                  <div className="flex flex-[1_0_0] items-center">
-                    <p className="font-['Poppins'] font-light text-[18px] lg:text-[24px] leading-normal">
-                      {item.company}
-                    </p>
-                  </div>
-                  <div className="flex flex-[1_0_0] items-center justify-end">
-                    <p className="font-['Poppins'] font-light text-[18px] lg:text-[24px] leading-normal">
-                      {item.period}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </section>
+                    {/* Desktop / Tablet Layout */}
+                    <div className="hidden md:flex items-center gap-[40px] lg:gap-[60px] py-[35px]">
+                      {/* Company */}
+                      <div className="flex items-center w-[260px] lg:w-[360px] shrink-0">
+                        <p className="font-['Poppins'] font-light text-[18px] lg:text-[24px] leading-normal">
+                          {item.company}
+                        </p>
+                      </div>
+
+                      {/* Role */}
+                      <div className="flex items-center flex-1 min-w-0">
+                        <p className="font-['Poppins'] font-light text-[18px] lg:text-[24px] leading-normal">
+                          {item.role}
+                        </p>
+                      </div>
+
+                      {/* Period - large screens only */}
+                      <div className="hidden lg:flex items-center justify-end shrink-0 w-[180px]">
+                        <p className="font-['Poppins'] font-light text-[18px] lg:text-[24px] leading-normal">
+                          {item.period}
+                        </p>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </section>
+
 
         {/* =========================================================
             WORK SECTION
@@ -482,7 +495,7 @@ export default function InteractivePortfolio() {
             My work
           </h2>
 
-          <div className="flex flex-col gap-28 md:gap-40">
+          <div className="flex flex-col gap-12 md:gap-28 lg:gap-40">
             {projects.map((project, index) => (
               <motion.div
                 key={project.id}

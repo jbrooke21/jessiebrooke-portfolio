@@ -47,38 +47,46 @@ export default function HalpMigrationPage() {
           </Container>
         </div>
 
-        {/* =========================================================
-            TITLE SECTION
-        ========================================================= */}
-        <div className="mt-[52px] w-full">
-          <Container>
-            <div className="flex flex-col gap-[16px] items-start">
-              <div className="flex items-start gap-3 md:gap-4">
-                <img
-                  src={halpIcon}
-                  alt="Halp"
-                  className="w-[40px] h-[40px] sm:w-[40px] sm:h-[40px] md:w-[48px] md:h-[48px]"
-                />
+                {/* =========================================================
+              TITLE SECTION
+          ========================================================= */}
+          <div className="mt-[52px] w-full">
+            <Container>
+              <div className="flex flex-col gap-[16px] items-start">
+                
+                <div className="flex items-start gap-2 md:gap-4">
+                  
+                  {/* Icons + Arrow (desktop only) */}
+                  <div className="hidden md:flex items-center gap-3">
+                    <img
+                      src={halpIcon}
+                      alt="Halp"
+                      className="w-[48px] h-[48px]"
+                    />
 
-                <span className="text-[28px]">→</span>
+                    <span className="text-[28px]">→</span>
 
-                <img
-                  src={jsmIcon}
-                  alt="Jira Service Management"
-                  className="w-[40px] h-[40px] sm:w-[40px] sm:h-[40px] md:w-[48px] md:h-[48px]"
-                />
+                    <img
+                      src={jsmIcon}
+                      alt="Jira Service Management"
+                      className="w-[48px] h-[48px]"
+                    />
+                  </div>
 
-                <h1 className="font-['Poppins'] text-[28px] sm:text-[34px] md:text-[48px] leading-[1.1] text-[#292a2e]">
-                  Atlassian Halp to JSM
-                </h1>
+                  {/* Title */}
+                  <h1 className="font-['Poppins'] text-[28px] sm:text-[34px] md:text-[48px] leading-[1.1] text-[#292a2e]">
+                    Atlassian Halp to JSM
+                  </h1>
+                </div>
+
+                {/* Date */}
+                <p className="text-[20px] font-['Poppins'] font-light text-black leading-[1.4]">
+                  2022 – 2023
+                </p>
+
               </div>
-
-              <p className="text-[20px] font-['Poppins'] font-light text-black leading-[1.4]">
-                2022 – 2023
-              </p>
-            </div>
-          </Container>
-        </div>
+            </Container>
+          </div>
 
         {/* =========================================================
             MAIN CONTENT
