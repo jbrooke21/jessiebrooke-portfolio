@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "motion/react";
 import NorthEastIcon from "@mui/icons-material/NorthEast";
 import Lottie from "lottie-react";
+import AnimatedFlowerPhoto from "./AnimatedFlowerPhoto";
 
 import heroAnimation from "../../assets/jessie-avatar.json";
 import Footer from "./Footer";
@@ -16,7 +17,6 @@ import imgAutomation from "../../assets/connie-mainpage.png";
 import imgHalp from "../../assets/halp-mainpage.png";
 import imgCompass from "../../assets/compass-mainpage.png";
 import imgStatuspage from "../../assets/statuspage-mainpage.png";
-import imgAbout from "../../assets/me.png";
 
 const siteContent = {
   hero: {
@@ -536,61 +536,47 @@ export default function InteractivePortfolio() {
         </section>
 
         {/* =========================================================
-            ABOUT SECTION
-        ========================================================= */}
-        <section
-          id="about"
-          className="scroll-mt-[140px] pt-[80px] md:pt-[160px] lg:pt-[220px] pb-20 md:pb-30 lg:pb-40"
+    ABOUT SECTION
+========================================================= */}
+<section
+  id="about"
+  className="scroll-mt-[140px] pt-[80px] md:pt-[160px] lg:pt-[220px] pb-20 md:pb-30 lg:pb-40"
+>
+  <SectionHeader eyebrow="A bit more" heading="About me" />
+
+  <div className="flex flex-col items-center lg:flex-row lg:items-start gap-16 md:gap-24">
+    <AnimatedFlowerPhoto />
+
+    <motion.div
+      initial={{ y: 24, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay: 0.15 }}
+      className="max-w-[900px] space-y-6"
+    >
+      {siteContent.about.map((paragraph) => (
+        <p
+          key={paragraph}
+          className="font-['Poppins'] font-light text-[18px] md:text-[24px] leading-[1.5]"
         >
-          <SectionHeader eyebrow="A bit more" heading="About me" />
+          {paragraph}
+        </p>
+      ))}
 
-          <div className="flex flex-col items-center lg:flex-row lg:items-start gap-16 md:gap-24">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.94 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              whileHover={{ scale: 1.04, rotate: 2 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.45 }}
-              className="w-full max-w-[320px] md:max-w-[380px] shrink-0"
-            >
-              <div className="relative group">
-                <div className="absolute inset-0 rounded-full bg-[#70b110] opacity-0 group-hover:opacity-20 group-hover:scale-110 transition-all duration-500" />
-                <img
-                  src={imgAbout}
-                  alt="Jessie with cat"
-                  className="relative z-10 w-full aspect-square rounded-full object-cover"
-                />
-              </div>
-            </motion.div>
+      <a
+        href="/jessie-brooke-2026.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group inline-flex items-center gap-3 pt-2 font-['Poppins'] font-medium italic text-[18px] md:text-[24px] leading-none text-black hover:text-[#70b110] transition-all duration-300 ease-out hover:translate-x-1.5 hover:-translate-y-0.5"
+      >
+        <span>Resume</span>
+        <NorthEastIcon sx={{ fontSize: "0.9em" }} />
+      </a>
 
-            <motion.div
-              initial={{ y: 24, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.15 }}
-              className="max-w-[900px] space-y-6"
-            >
-              {siteContent.about.map((paragraph) => (
-                <p
-                  key={paragraph}
-                  className="font-['Poppins'] font-light text-[18px] md:text-[24px] leading-[1.5]"
-                >
-                  {paragraph}
-                </p>
-              ))}
+    </motion.div>
+  </div>
+</section>
 
-              <a
-                href="/jessie-brooke-2026.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center gap-3 pt-2 font-['Poppins'] font-medium italic text-[18px] md:text-[24px] leading-none text-black hover:text-[#70b110] transition-all duration-300 ease-out hover:translate-x-1.5 hover:-translate-y-0.5"
-              >
-                <span>Resume</span>
-                <NorthEastIcon sx={{ fontSize: "0.9em" }} />
-              </a>
-            </motion.div>
-          </div>
-        </section>
       </Container>
 
       {/* =========================================================
