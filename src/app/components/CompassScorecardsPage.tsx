@@ -88,21 +88,15 @@ export default function CompassScorecardsPage() {
 
                 <div className="flex flex-col font-['Poppins'] font-light justify-center w-full">
                   <p className="leading-[normal] mb-[32px]">
-                    When Compass entered Beta, I led the first iteration of the
-                    Scorecards feature, which enabled teams to evaluate the health
-                    of their software components using customizable best-practice
-                    criteria. I ran research with DevOps and platform engineers to
-                    identify which signals and standards they rely on, and how
-                    they determine whether a service is healthy, at risk, or
-                    failing.
+                   When Compass entered Beta, I led the first iteration of the Scorecards feature, 
+                   which enables teams to evaluate the health of their software components using 
+                   customizable best-practice criteria. I ran research with DevOps and platform engineers 
+                   to identify which signals and standards they rely on, and how they determine whether a 
+                   service is healthy, at risk, or failing. Those findings shaped the scoring model, 
+                   criteria structure, and evaluation experience, turning complex operational concepts 
+                   into a practical, configurable framework teams could apply across their services.
                   </p>
 
-                  <p className="leading-[normal] mb-[16px]">
-                    Those findings shaped the scoring model, criteria structure,
-                    and evaluation experience, turning complex operational
-                    concepts into a practical, configurable framework teams could
-                    apply across their services.
-                  </p>
 
                   <p>
                     <span className="font-['Poppins'] font-medium leading-[normal] not-italic">
@@ -118,8 +112,7 @@ export default function CompassScorecardsPage() {
                     </span>
                     <span className="leading-[normal]">
                       {" "}
-                      Lead Product Designer (rollout strategy, workflow design,
-                      admin UX)
+                      Lead Product Designer (rollout strategy, workflow design, admin UX); named inventor on Scorecards patent
                     </span>
                   </p>
                 </div>
