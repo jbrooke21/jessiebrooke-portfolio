@@ -165,7 +165,7 @@ export default function AnimatedFlowerPhoto() {
       {/* ============ FLOWER 4: Yellow berry trio (right) — desktop only ============ */}
       <Flower
         i={3}
-        className="top-[140px] right-[-60px]"
+        className="top-[140px] right-[-70px]"
         rotate={14}
         hideOnMobile
       >
@@ -193,10 +193,10 @@ export default function AnimatedFlowerPhoto() {
       {/* ============ FLOWER 5: Coral daisy (bottom-right) — KEEP on mobile ============ */}
       <Flower
         i={4}
-        className="bottom-[0px] right-[0px] md:bottom-[10px] md:right-[10px] scale-[0.7] sm:scale-[0.85] md:scale-100"
-        rotate={-6}
+        className="bottom-[0px] right-[0px] md:bottom-[0px] md:right-[-15px] scale-[0.7] sm:scale-[0.85] md:scale-100 rotate-[10deg] md:rotate-[12deg]"
+        rotate={0}
         swayDuration={7}
-      >
+>
         <svg width="100" height="130" viewBox="0 0 100 130" style={{ overflow: "visible" }}>
           <path d="M50 130 L50 55" stroke={C.greenDark} strokeWidth="3.5" fill="none" strokeLinecap="round" />
           <ellipse cx="22" cy="95" rx="20" ry="10" fill={C.greenLeaf} transform="rotate(-30 22 95)" />
@@ -234,11 +234,11 @@ export default function AnimatedFlowerPhoto() {
 
       {/* ============ FLOWER 7: Upright coral tulips (bottom-left) — KEEP on mobile ============ */}
        <Flower
-            i={6}
-            className="bottom-[-0px] left-[-10px] md:bottom-[-0px] md:left-[0px] scale-[0.7] sm:scale-[0.85] md:scale-100"
-            rotate={5}
-            swayDuration={4}
-          >
+        i={6}
+        className="bottom-[-12px] left-[5px] md:bottom-[-12px] md:left-[5px] scale-[0.7] sm:scale-[0.85] md:scale-100 rotate-[-20deg] md:rotate-[-20deg]"
+        rotate={0}
+        swayDuration={4}
+      >
           <svg width="90" height="140" viewBox="0 0 90 140" style={{ overflow: "visible" }}>
             {/* Main stem */}
             <path d="M45 140 L45 45" stroke={C.greenDark} strokeWidth="3.5" fill="none" strokeLinecap="round" />
