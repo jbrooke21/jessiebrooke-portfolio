@@ -79,15 +79,16 @@ const siteContent = {
       },
     ],
   },
-  timeline: [
-    { role: "Senior Product Designer", company: "Confluence", period: "2024–2025" },
-    { role: "Senior Product Designer", company: "Jira Service Management", period: "2024" },
-    { role: "Senior Product Designer", company: "Halp", period: "2024–2022" },
-    { role: "Senior Product Designer", company: "Compass", period: "2022–2021" },
-    { role: "Product Designer", company: "Statuspage", period: "2021–2019" },
-    { role: "Product Designer -> UX Designer", company: "Symphony Communications", period: "2019–2015" },
-    { role: "Newbie Freelancer", company: "Web Design", period: "2014–2011" },
-  ],
+timeline: [
+  { parent: "Atlassian", role: "Senior Product Designer", company: "Confluence", period: "2024–2025" },
+  { parent: "Atlassian", role: "Senior Product Designer", company: "Jira Service Management", period: "2024" },
+  { parent: "Atlassian", role: "Senior Product Designer", company: "Halp", period: "2022–2024" },
+  { parent: "Atlassian", role: "Senior Product Designer", company: "Compass", period: "2021–2022" },
+  { parent: "Atlassian", role: "Product Designer", company: "Statuspage", period: "2019–2021" },
+  { role: "Product Designer -> UX Designer", company: "Symphony Communications", period: "2015–2019" },
+  { role: "Newbie Freelancer", company: "Web Design", period: "2011–2014" },
+],
+
   about: [
     "I’m a Bay Area–based product designer with over ten years of experience creating thoughtful, human-centered digital products. I’m especially interested in how people interact with information and the systems that shape their daily lives. ",
     "Outside of design, I’m an avid reader and lifelong bibliophile who loves horror and cheesy action films. I foster kittens and support local TNR efforts, and spend the rest of my time painting, drawing, or exploring the outdoors.",
@@ -437,6 +438,11 @@ export default function InteractivePortfolio() {
                     {/* Mobile Layout */}
                     <div className="block md:hidden py-6">
                       <div className="flex flex-col gap-1">
+                        {item.parent && (
+                          <p className="font-['Poppins'] font-light text-[13px] leading-[1.4] text-black/60">
+                            {item.parent}
+                          </p>
+                        )}
                         <p className="font-['Poppins'] font-medium text-[16px] leading-[1.4]">
                           {item.company}
                         </p>
@@ -449,10 +455,15 @@ export default function InteractivePortfolio() {
                       </div>
                     </div>
 
-                    {/* Desktop / Tablet Layout */}
+                   {/* Desktop / Tablet Layout */}
                     <div className="hidden md:flex items-center gap-[40px] lg:gap-[60px] py-[35px]">
                       {/* Company */}
-                      <div className="flex items-center w-[260px] lg:w-[360px] shrink-0">
+                      <div className="flex flex-col justify-center w-[260px] lg:w-[360px] shrink-0">
+                        {item.parent && (
+                          <p className="font-['Poppins'] font-light text-[13px] lg:text-[14px] leading-[1.4] text-black/60">
+                            {item.parent}
+                          </p>
+                        )}
                         <p className="font-['Poppins'] font-light text-[18px] lg:text-[24px] leading-normal">
                           {item.company}
                         </p>
@@ -472,6 +483,7 @@ export default function InteractivePortfolio() {
                         </p>
                       </div>
                     </div>
+
                   </motion.div>
                 ))}
               </div>
