@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import NorthEastIcon from "@mui/icons-material/NorthEast";
 import Lottie from "lottie-react";
 import AnimatedFlowerPhoto from "./AnimatedFlowerPhoto";
+import PaperAirplane from "./PaperAirplane";
 
 import heroAnimation from "../../assets/jessie-avatar.json";
 import Footer from "./Footer";
@@ -91,6 +92,8 @@ timeline: [
   { role: "Product Designer -> UX Designer", company: "Symphony Communications", period: "2015–2019" },
   { role: "Newbie Freelancer", company: "Web Design", period: "2011–2014" },
 ],
+
+
 
   about: [
     "I’m a Bay Area–based product designer with over ten years of experience creating thoughtful, human-centered digital products. I’m especially interested in how people interact with information and the systems that shape their daily lives. ",
@@ -420,77 +423,89 @@ export default function InteractivePortfolio() {
           </div>
         </section>
 
-              {/* =========================================================
-                EXPERIENCE SECTION
-            ========================================================= */}
-            <section
-              id="experience"
-              className="scroll-mt-[140px] pt-[40px] md:pt-[100px] lg:pt-[140px] pb-20"
-            >
-              <SectionHeader eyebrow="What I've been up to" heading="My adventures" />
-              <div className="space-y-0">
-                {siteContent.timeline.map((item, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ x: -30, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.05 }}
-                    className="bg-white border-b border-[#70b110] border-solid"
-                  >
-                    {/* Mobile Layout */}
-                    <div className="block md:hidden py-6">
-                      <div className="flex flex-col gap-1">
-                        {item.parent && (
-                          <p className="font-['Poppins'] font-light text-[13px] leading-[1.4] text-black/60">
-                            {item.parent}
+            {/* =========================================================
+                  EXPERIENCE SECTION
+              ========================================================= */}
+              <section
+                id="experience"
+                className="scroll-mt-[140px] pt-[40px] md:pt-[100px] lg:pt-[140px] pb-20"
+              >
+                {/* Intro block */}
+               <div className="mb-14 md:mb-20">
+                  <p className="font-['Poppins'] text-[12px] tracking-[0.15em] uppercase text-[#70b110] mb-0">
+                    What I've been up to
+                  </p>
+                 
+                  <div className="flex items-center gap-3 md:gap-6 mb-5 md:mb-6">
+                    <h2 className="font-['Poppins'] font-medium text-[28px] md:text-[32px] leading-[1.2] text-black">
+                      My adventures
+                    </h2>
+                    <PaperAirplane />
+                  </div>
+
+                  <p className="font-['Poppins'] font-light text-[18px] md:text-[22px] leading-[1.5] text-black/80">
+                    Over the past decade, I've designed across a range of domains including collaboration and content creation, customer support, ITSM, DevOps and developer experience, incident management, and fintech. My focus is helping teams make sense of complex systems at every layer of their workflow.
+                  </p>
+                </div>
+
+                {/* Timeline */}
+                <div className="space-y-0">
+                  {siteContent.timeline.map((item, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ x: -30, opacity: 0 }}
+                      whileInView={{ x: 0, opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: index * 0.05 }}
+                      className="bg-white border-b border-[#70b110] border-solid"
+                    >
+                      {/* Mobile Layout */}
+                      <div className="block md:hidden py-6">
+                        <div className="flex flex-col gap-1">
+                          {item.parent && (
+                            <p className="font-['Poppins'] font-light text-[13px] leading-[1.4] text-black/60">
+                              {item.parent}
+                            </p>
+                          )}
+                          <p className="font-['Poppins'] font-medium text-[16px] leading-[1.4]">
+                            {item.company}
                           </p>
-                        )}
-                        <p className="font-['Poppins'] font-medium text-[16px] leading-[1.4]">
-                          {item.company}
-                        </p>
-                        <p className="font-['Poppins'] font-light text-[16px] leading-[1.4]">
-                          {item.role}
-                        </p>
-                        <p className="font-['Poppins'] font-light text-[16px] leading-[1.4] text-black/60">
-                          {item.period}
-                        </p>
-                      </div>
-                    </div>
-
-                   {/* Desktop / Tablet Layout */}
-                    <div className="hidden md:flex items-center gap-[40px] lg:gap-[60px] py-[35px]">
-                      {/* Company */}
-                      <div className="flex flex-col justify-center w-[260px] lg:w-[360px] shrink-0">
-                        {item.parent && (
-                          <p className="font-['Poppins'] font-light text-[13px] lg:text-[14px] leading-[1.4] text-black/60">
-                            {item.parent}
+                          <p className="font-['Poppins'] font-light text-[16px] leading-[1.4]">
+                            {item.role}
                           </p>
-                        )}
-                        <p className="font-['Poppins'] font-light text-[18px] lg:text-[24px] leading-normal">
-                          {item.company}
-                        </p>
+                          <p className="font-['Poppins'] font-light text-[16px] leading-[1.4] text-black/60">
+                            {item.period}
+                          </p>
+                        </div>
                       </div>
 
-                      {/* Role */}
-                      <div className="flex items-center flex-1 min-w-0">
-                        <p className="font-['Poppins'] font-light text-[18px] lg:text-[24px] leading-normal">
-                          {item.role}
-                        </p>
+                      {/* Desktop / Tablet Layout */}
+                      <div className="hidden md:flex items-center gap-[40px] lg:gap-[60px] py-[35px]">
+                        <div className="flex flex-col justify-center w-[260px] lg:w-[360px] shrink-0">
+                          {item.parent && (
+                            <p className="font-['Poppins'] font-light text-[13px] lg:text-[14px] leading-[1.4] text-black/60">
+                              {item.parent}
+                            </p>
+                          )}
+                          <p className="font-['Poppins'] font-light text-[18px] lg:text-[24px] leading-normal">
+                            {item.company}
+                          </p>
+                        </div>
+                        <div className="flex items-center flex-1 min-w-0">
+                          <p className="font-['Poppins'] font-light text-[18px] lg:text-[24px] leading-normal">
+                            {item.role}
+                          </p>
+                        </div>
+                        <div className="hidden lg:flex items-center justify-end shrink-0 w-[180px]">
+                          <p className="font-['Poppins'] font-light text-[18px] lg:text-[24px] leading-normal">
+                            {item.period}
+                          </p>
+                        </div>
                       </div>
-
-                      {/* Period - large screens only */}
-                      <div className="hidden lg:flex items-center justify-end shrink-0 w-[180px]">
-                        <p className="font-['Poppins'] font-light text-[18px] lg:text-[24px] leading-normal">
-                          {item.period}
-                        </p>
-                      </div>
-                    </div>
-
-                  </motion.div>
-                ))}
-              </div>
-            </section>
+                    </motion.div>
+                  ))}
+                </div>
+              </section>
 
 
         {/* =========================================================
