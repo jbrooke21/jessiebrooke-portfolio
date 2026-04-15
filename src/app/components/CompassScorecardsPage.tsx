@@ -88,7 +88,9 @@ export default function CompassScorecardsPage() {
 
                 <div className="flex flex-col font-['Poppins'] font-light justify-center w-full">
                   <p className="leading-[normal] mb-[32px]">
-                   When Compass entered Beta, I led the first iteration of the Scorecards feature, 
+                   Atlassian Compass is a developer platform that provides a centralized view of software 
+                   components, ownership, and system health across an organization. When Compass entered Beta, 
+                   I led the first iteration of the Scorecards feature, 
                    which enables teams to evaluate the health of their software components using 
                    customizable best-practice criteria. I ran research with DevOps and platform engineers 
                    to identify which signals and standards they rely on, and how they determine whether a 

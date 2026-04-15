@@ -116,7 +116,9 @@ export default function StatuspageMigrationPage() {
 
                 <div className="flex flex-col font-['Poppins'] font-light justify-center w-full">
                   <p className="leading-[normal] mb-[24px]">
-                    After Statuspage was acquired by Atlassian, it transitioned
+                    Atlassian Statuspage is a platform for communicating real-time 
+                    service status and incidents to customers. After Statuspage was acquired by Atlassian, 
+                    it transitioned
                     from a standalone identity platform to Atlassian Identity and
                     Access. I led the end-to-end migration of accounts, login
                     flows, and authentication management, including adoption of

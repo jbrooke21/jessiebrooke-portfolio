@@ -444,7 +444,7 @@ export default function InteractivePortfolio() {
                   </div>
 
                   <p className="font-['Poppins'] font-light text-[18px] md:text-[22px] leading-[1.5] text-black/80">
-                    Over the past decade, I've designed across a range of domains including collaboration and content creation, customer support, ITSM, DevOps and developer experience, incident management, and fintech. My focus is helping teams make sense of complex systems at every layer of their workflow.
+                    Over the past decade, I’ve designed across collaboration and content creation, customer support, ITSM, developer experience and DevOps tooling, incident management, and fintech. I focus on helping teams make sense of complex systems throughout their workflows.
                   </p>
                 </div>
 

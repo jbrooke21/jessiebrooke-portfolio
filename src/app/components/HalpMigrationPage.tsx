@@ -75,7 +75,7 @@ export default function HalpMigrationPage() {
 
                   {/* Title */}
                   <h1 className="font-['Poppins'] text-[28px] sm:text-[34px] md:text-[48px] leading-[1.1] text-[#292a2e]">
-                    Atlassian Halp to JSM
+                    Atlassian Halp to Jira Service Management
                   </h1>
                 </div>
 
@@ -107,16 +107,15 @@ export default function HalpMigrationPage() {
                     Halp was a chat-based support tool integrated with Slack and
                     Microsoft Teams, turning conversations into structured tickets
                     and serving as a primary support system for many teams. Its
-                    sunset required all customers to migrate to JSM or export
+                    sunset required all customers to migrate to Jira Service Management or export
                     their data, impacting admins, agents, and end users across
                     complex, distributed organizations.
                   </p>
 
                   <p className="leading-[normal] mb-[16px]">
-                    The goal was to enable customers to migrate safely,
-                    incrementally, and on their own timelines, while minimizing
-                    risk, downtime, and support burden during a high-stakes
-                    transition.
+                    As the lead designer on the sunsetting and migration experience, 
+                    I focused on enabling customers to migrate safely, incrementally, and on 
+                    their own timelines while minimizing risk, downtime, and support burden.
                   </p>
 
                   <p>

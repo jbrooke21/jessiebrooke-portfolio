@@ -190,6 +190,8 @@ export default function ConfluenceAutomationPage() {
 
                 <div className="flex flex-col font-['Poppins'] font-light justify-center w-full">
                   <p className="leading-[normal] mb-[24px]">
+                    Atlassian Confluence is a shared workspace where teams create and manage 
+                    documentation and project knowledge.
                     Confluence Automations introduced intelligent, event-based
                     workflows to reduce time spent on repetitive setup and manual
                     coordination work. I led the design of automation templates
