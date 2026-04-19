@@ -1,7 +1,7 @@
 
   # Interactive Portfolio Site
 
-  This is a code bundle for Interactive Portfolio Site. The original project is available at https://www.figma.com/design/JiUxNK6QMOqf1W34oDZfEc/Interactive-Portfolio-Site.
+  This is my design portfolio site. I started creating this in Figma Make, downloaded the files, and began coding it myself with the help of Claude and Chat GPT.
 
   ## Running the code
 
